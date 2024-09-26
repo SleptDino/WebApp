@@ -17,6 +17,11 @@ function getWeightData() {
 // In reality, you would use fetch or WebSocket to get data from your load cell system.
     return Math.random() * maxWeight;  // Random weight for demo
 }
+setInterval(async () => {
+    const response = await fetch('http://147.50.228.21:5000/weight');
+    const data = await response.json();
+    updateGauge(data.weight);  // Update gauge chart with new weight
+}, 1000);
 
 // Update the gauge every second with new weight data
 setInterval(() => {
@@ -28,4 +33,10 @@ setInterval(() => {
 function controlServo() {
     // JavaScript code to control the servo motor here
     alert('Servo motor control triggered');
+}
+
+function getWeightData() {
+    return fetch('/api/weight')
+        .then(response => response.json())
+        .then(data => data.weight);  // Assuming the API returns { "weight": <value> }
 }
