@@ -9,7 +9,6 @@
     text-decoration: none;
     scroll-padding-top: 2rem;
     scroll-behavior: smooth;
-
 }
   
 :root {
@@ -40,6 +39,7 @@ img {
 body {
     color: var(--text-color);
     /* background-image: url('img/bg.png'); */
+    font-family: Arial, sans-serif;
 }
 
 header{
@@ -56,7 +56,11 @@ header{
     padding: 20px 100px;
     transition: 0.5s;
 }
-
+.chick-icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
 .profile {
     display: flex;
     align-items: center;
@@ -446,43 +450,7 @@ header{
 .about-text p{
     margin: 0.5rem 0 1rem;
 }
-.task{
-    max-width: 968;
-    margin-left: auto;
-    margin-right: auto;
-}
-.task h2{
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-.task-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-    gap: 1.5rem;   
-    margin-top: 2rem;
-}
-.task-container .box{
-    padding: 20px;
-    box-shadow: 1px 2px 11px 4px rgb(14 55 54 /15%);
-    border-radius: 0.5rem;
-    border-bottom: 7px solid var(--green-color);
-}
-.task-container .box:hover{
-    transform: translate(10px);
-    transition: 0.2s all linear;
-}
-.task-container .box .bx{
-    font-size: 24px;
-    color: green;
-}
-.task-container .box .star .bx{
-    font-size: 1rem;
-    color: var(--light-orange-color);
-}
-.task-container .box p {
-    font-size: 0.938rem;
-}
+
 .review-profile{
     display: flex;
     align-items: center;
@@ -572,6 +540,8 @@ header{
     text-align: center;
     padding: 20px;
 }
+
+    
 /* Making Responsive */
 @media (max-width: 1080px) {
     header {
@@ -690,6 +660,7 @@ header{
     }
 }
 @media (max-width: 370px) {
+    
     .logo {
        font-size: 1rem; 
     }
