@@ -18,16 +18,10 @@ function getWeightData() {
     return Math.random() * maxWeight;  // Random weight for demo
 }
 setInterval(async () => {
-    const response = await fetch('http://147.50.228.21:5000/weight');
+    const response = await fetch('http://172.20.10.8:5000/weight');
     const data = await response.json();
     updateGauge(data.weight);  // Update gauge chart with new weight
 }, 1000);
-
-// Update the gauge every second with new weight data
-setInterval(() => {
-    const weight = getWeightData();
-    updateGauge(weight);
-    }, 1000);  // Adjust the interval based on your real-time data update rate
 
 // Servo control function (replace with actual control logic)
 function controlServo() {
